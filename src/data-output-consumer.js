@@ -1,6 +1,4 @@
 const { Kafka } = require("kafkajs");
-const { addInputValue } = require("./FileHandler");
-const { externalSort } = require('./external-sort')
 
 run = async () => {
   try {

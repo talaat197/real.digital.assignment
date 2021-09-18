@@ -17,8 +17,6 @@ run = async () => {
 
     console.log('connecting to producer...');
 
-    console.log(getInput() , 'input data');
-
     const result = await producer.send({
         "topic" : "data-input",
         messages : getInput()

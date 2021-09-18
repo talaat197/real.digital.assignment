@@ -117,7 +117,7 @@ const externalSorting = async (arr) => {
     }
 }
 
-// sort();
+sort();
 
 module.exports = {
     externalSort : sort

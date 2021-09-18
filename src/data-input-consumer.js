@@ -28,7 +28,8 @@ run = async () => {
         console.log(batch.partition , 'partition');
         for (let message of batch.messages) {
           let value = message.value.toString();  
-          console.log(value , 'partition');
+
+          console.log(value , filename);
 
           addInputValue(value , filename)
          
