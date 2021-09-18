@@ -63,7 +63,7 @@ var heap = new Heap();
 const sort = async () => {
     // initialize file
     lockFile.lock('./temp/sorting-file.lock', {
-        wait: 5000,
+        wait: 2000,
         stale: 2000
     }, async function  (error) {
         if(error)
@@ -116,8 +116,6 @@ const externalSorting = async (arr) => {
         await externalSorting(arr);
     }
 }
-
-sort();
 
 module.exports = {
     externalSort : sort

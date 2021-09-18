@@ -23,21 +23,16 @@ run = async () => {
     
     consumer.run({
       eachBatch: async ({ batch, resolveOffset, heartbeat, isRunning, isStale }) => {
-        console.log("BATCH.........................")
         const filename = "runs_"+batch.partition+".txt";
-        console.log(batch.partition , 'partition');
+
         for (let message of batch.messages) {
           let value = message.value.toString();  
-
-          console.log(value , filename);
-
           addInputValue(value , filename)
          
           await resolveOffset(message.offset)
           await heartbeat()
         }
          await externalSort()
-
       },
     })
 
