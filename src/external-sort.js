@@ -61,7 +61,7 @@ class Heap
 var heap = new Heap();
 
 const sort = async () => {
-    // initialize file
+    // lock the external sorting
     lockFile.lock('./temp/sorting-file.lock', {
         wait: 2000,
         stale: 2000
@@ -70,7 +70,8 @@ const sort = async () => {
         {
             return console.log('Something went wrong when acquiring a lock.' , error)
         }
-
+        
+        // initialize file
         writeFirstOutputValue("");
         const filenames = await getFilesNames();
         let arr = [];
